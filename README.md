@@ -1,2 +1,2 @@
-# bdrelacionales
-Base de datos relacionales
+# Luis Angel Perez Lozano
+4AVP
