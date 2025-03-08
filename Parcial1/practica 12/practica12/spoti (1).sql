@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2025 a las 02:20:29
+-- Tiempo de generación: 08-03-2025 a las 01:40:16
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -39,24 +39,8 @@ CREATE TABLE `artisacanciones` (
 --
 
 INSERT INTO `artisacanciones` (`id`, `artista_id`, `canciones_id`) VALUES
-(1, 2, 18),
-(2, 2, 9),
-(3, 2, 2),
-(4, 2, 3),
-(5, 2, 4),
-(6, 2, 5),
-(7, 1, 8),
-(8, 1, 9),
-(9, 1, 10),
-(10, 1, 11),
-(11, 1, 12),
-(12, 1, 13),
-(13, 3, 14),
-(14, 3, 15),
-(15, 3, 16),
-(16, 3, 17),
-(17, 3, 18),
-(18, 3, 19);
+(1, 1, 9),
+(2, 5, 21);
 
 -- --------------------------------------------------------
 
@@ -143,15 +127,6 @@ CREATE TABLE `favoritos` (
   `canciones_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `favoritos`
---
-
-INSERT INTO `favoritos` (`id`, `usuario_id`, `canciones_id`) VALUES
-(1, 1, 14),
-(2, 1, 15),
-(3, 8, 7);
-
 -- --------------------------------------------------------
 
 --
@@ -211,6 +186,15 @@ CREATE TABLE `playliscanciones` (
   `canciones_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `playliscanciones`
+--
+
+INSERT INTO `playliscanciones` (`id`, `playlist_id`, `canciones_id`, `usuario_id`) VALUES
+(1, 2, 15, 1),
+(2, 3, 14, 2),
+(3, 7, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -344,7 +328,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `artisacanciones`
 --
 ALTER TABLE `artisacanciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas`
@@ -362,7 +346,7 @@ ALTER TABLE `canciones`
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
@@ -380,7 +364,7 @@ ALTER TABLE `membresias`
 -- AUTO_INCREMENT de la tabla `playliscanciones`
 --
 ALTER TABLE `playliscanciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist`
