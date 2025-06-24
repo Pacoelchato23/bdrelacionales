@@ -1,14 +1,43 @@
 <?php 
-  header("Content-Type: application/json");
-  header("Access-Control-Allow-Oringin: *");
+  
 
-    $usuarios=[
-        ["id" => 1, "nombre" => "Alejandro Tizoc", "correo" => "alejandro@gmail.com"],
-        ["id" => 1, "nombre" => "Luis Perez", "correo" => "luis@gmail.com"],
-        ["id" => 1, "nombre" => "Victor Ojeda", "correo" => "victor@gmail.com"],
+  $host = 'localhost';
+  $user = 'root';
+  $pass = '';
+  $dbname = 'Alumnos';
 
-    ];
+    $conn = new mysqli($host, $user, $pass, $dbname);
+    
+    if($conn->connect_error){
+        http_response_code(500);
+        echo json_encode(['error' => 'Error de conexion: ' .$conn->connect_error]);
+        exit;
 
-  echo json_encode($usuarios);
+
+
+    }
+          $sql = "SELECT * FROM actor";
+          $result = $conn->query($sql);
+
+          $actors = [];
+
+
+
+
+          if($result && $result->num_rows > 0);{
+            while($row = $result->fetch_assoc()){
+               $actors[] = $row;
+
+            }
+
+        }
+        $conn->close();
+
+        header("content-type: application/json");
+        echo json_encode($actors);
+
+    //https://localhost/api/getActors.php
+    
 
 ?>
+
